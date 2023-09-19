@@ -13,10 +13,25 @@
             // Set the text of the greetingMessage element to greet the user
             greetingMessage.textContent = "Hello, " + userName + "!";
         }
+
+        function greetUser() {
+    const userName = document.getElementById("nameInput").value;
+    const greetingMessage = document.getElementById("greetingMessage");
+
+    if (userName.trim().toLowerCase() === "billy") { // Check if the name is "Billy" (ignoring case and spaces)
+        greetingMessage.textContent = "Hello, Fatty!";
+    } else {
+        greetingMessage.textContent = "Hello, " + userName + "!";
+    }
+}
+
+
     </script>
 </head>
 <body>
 
+    
+    
     <h1>Welcome to our Greeting Page</h1>
 
     <!-- Input box for name -->
@@ -27,5 +42,7 @@
     <!-- Element where the greeting message will be displayed -->
     <h2 id="greetingMessage"></h2>
 
+        
+    
 </body>
 </html>
