@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Page</title>
+    <script>
+        // JavaScript function to greet the user
+        function greetUser() {
+            const userName = document.getElementById("nameInput").value; // Get the name from the input box
+            const greetingMessage = document.getElementById("greetingMessage"); // Get the element where we'll show the message
+
+            // Set the text of the greetingMessage element to greet the user
+            greetingMessage.textContent = "Hello, " + userName + "!";
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Welcome to our Greeting Page</h1>
+
+    <!-- Input box for name -->
+    <label for="nameInput">Enter your name:</label>
+    <input type="text" id="nameInput">
+    <button onclick="greetUser()">Greet me!</button> <!-- Button to trigger the greeting function -->
+
+    <!-- Element where the greeting message will be displayed -->
+    <h2 id="greetingMessage"></h2>
+
+</body>
+</html>
