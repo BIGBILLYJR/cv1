@@ -1,52 +1,41 @@
-
-
-  body
-  {
-    background-color: #BCEAD5;
-  }
-  
-  
-  {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+body {
+  background-color: #BCEAD5;
+  font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 #displayArea {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-top: 20px;
 }
 
 #quizSection {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .quizBtn {
-    margin: 10px;
-    padding: 5px 10px;
+  margin: 10px;
+  padding: 5px 10px;
 }
-  
-  {
-    background-color: #BCEAD5;
-  }
 
-hr{
+hr {
   border-style: none;
   border-top-style: dotted;
   border-color: grey;
   border-width: 5px;
   width: 5%;
-
-}
-h1{
-  color:#66bfbf;
 }
 
-h3{
+h1 {
+  color: #66bfbf;
+}
+
+h3 {
   color: #66bfbf;
 }
