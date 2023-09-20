@@ -9,6 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Matter Classifier</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cable Identifier</title>
+    <link rel="stylesheet" href="styles.css">
+
+    
 </head>
 
 <body>
@@ -73,6 +80,64 @@
 </div>
 
 <script src="script.js"></script>
+
+<div class="container">
+  <h1>Cable Gallery</h1>
+  <div class="cable" id="usb">
+      <img src="path_to_usb_image.jpg" alt="USB Cable">
+      <div class="description">USB Cable: Used for data transfer and charging.</div>
+  </div>
+  <div class="cable" id="hdmi">
+      <img src="path_to_hdmi_image.jpg" alt="HDMI Cable">
+      <div class="description">HDMI Cable: Used to transmit audio and video signals.</div>
+  </div>
+</div>
+<script src="scripts.js"></script>
+
+
+<!-- Display Area -->
+<div id="displayArea">Select a matter type to view its properties.</div>
+
+<script>
+    // Change display and look based on the type of matter chosen
+    document.getElementById('matterType').addEventListener('change', function() {
+        const displayArea = document.getElementById('displayArea');
+
+        // Reset classes
+        displayArea.className = '';
+        
+        switch(this.value) {
+            case 'solid':
+                displayArea.textContent = 'Solids have a definite shape and volume.';
+                displayArea.classList.add('solid');
+                break;
+            case 'liquid':
+                displayArea.textContent = 'Liquids have a definite volume but take the shape of their container.';
+                displayArea.classList.add('liquid');
+                break;
+            case 'gas':
+                displayArea.textContent = 'Gases fill any container and do not have a definite shape or volume.';
+                displayArea.classList.add('gas');
+                break;
+            case 'plasma':
+                displayArea.textContent = 'Plasma is an ionized state of matter similar to gas.';
+                displayArea.classList.add('plasma');
+                break;
+            case 'mixture':
+                displayArea.textContent = 'Mixtures contain more than one chemical substance, and their properties can vary.';
+                displayArea.classList.add('mixture');
+                break;
+            case 'pure':
+                displayArea.textContent = 'Pure substances have consistent properties and are composed of only one type of element or compound.';
+                displayArea.classList.add('pure');
+                break;
+            default:
+                displayArea.textContent = 'Select a matter type to view its properties.';
+        }
+    });
+
+</script>
+
 </body>
 
 </html>

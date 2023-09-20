@@ -71,3 +71,14 @@ h3 {
   display: block;
 }
 
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    #displayArea {
+        margin-top: 20px;
+        border: 1px solid #ddd;
+        padding: 20px;
+    }
+
