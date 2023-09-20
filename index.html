@@ -239,7 +239,7 @@
 
     // Quiz logic
     function generateQuestion() {
-        question.textContent = 'Which state of matter has ... property?'; // Modify as needed
+        question.textContent = 'Which state of matter has fixed volume property?'; // Modify as needed
     }
     generateQuestion();
 
@@ -247,7 +247,7 @@
         btn.addEventListener('click', function() {
             const chosenAnswer = this.getAttribute('data-answer');
             // Assuming "solid", "liquid", "gas", and "plasma" are the correct answers for now. Adjust as needed.
-            if(['solid', 'liquid', 'gas', 'plasma'].includes(chosenAnswer)) {
+            if(['solid', 'liquid'].includes(chosenAnswer)) {
                 feedback.textContent = 'Correct!';
                 feedback.style.color = 'green';
             } else {
