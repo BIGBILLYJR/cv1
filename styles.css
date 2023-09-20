@@ -82,3 +82,37 @@ h3 {
         padding: 20px;
     }
 
+    /* Add styles to differentiate the states of matter visually in the displayArea */
+#displayArea.solid {
+  background-color: #D8E2E8;
+}
+#displayArea.liquid {
+  background-color: #8AA1B1;
+}
+#displayArea.gas {
+  background-color: #617D8C;
+}
+#displayArea.plasma {
+  background-color: #414F60;
+}
+#displayArea.mixture {
+  background-color: #E9CBB3;
+}
+#displayArea.pure {
+  background-color: #D3A87E;
+}
+
+/* Add some basic styling for the quiz buttons */
+.quizBtn {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.quizBtn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Add styles for other components as needed */
