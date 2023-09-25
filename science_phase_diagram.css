@@ -1,0 +1,15 @@
+
+
+.slider-wrapper {
+    position: relative;
+  }
+  
+  .slider-labels {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .slider-min, .slider-max {
+    position: relative;
+    bottom: 0px;  
+  }

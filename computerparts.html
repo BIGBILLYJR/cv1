@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Build Your PC's Power and Cooling System</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <h1>Interactive PSU Explorer</h1>
+    <div>
+        <button onclick="showConnector('atx')">ATX</button>
+        <button onclick="showConnector('sfx')">SFX</button>
+        <!-- Add buttons for other connectors here -->
+    </div>
+    <img id="connectorImage" src="" alt="">
+
+    <h1>Cooling Choice Simulator</h1>
+    <div>
+        <button onclick="showCooling('air')">Air Cooling</button>
+        <button onclick="showCooling('liquid')">Liquid Cooling</button>
+    </div>
+    <img id="coolingImage" src="" alt="">
+
+    <script src="script.js"></script>
+</body>
+</html>

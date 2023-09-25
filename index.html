@@ -1,116 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8">
-  <title>Nates Personal Site</title>
-<link rel="stylesheet" href="css/styles.css">
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Matter Classifier</title>
-    <link rel="stylesheet" href="styles.css">
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cable Identifier</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matter Properties & Cable Gallery</title>
-    <style>
-        /* CSS Styles */
-
-        body {
-            background-color: #BCEAD5;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        #displayArea {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-top: 20px;
-        }
-
-        #quizSection {
-            margin-top: 40px;
-        }
-
-        .quizBtn {
-            margin: 10px;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .quizBtn:hover {
-            background-color: #e0e0e0;
-        }
-
-        h1 {
-            color: #66bfbf;
-        }
-
-        .cable img {
-            width: 150px;
-            border: 2px solid transparent;
-            transition: border 0.3s;
-        }
-
-        .cable:hover img {
-            border: 2px solid #66bfbf;
-            opacity: 0.7;
-        }
-
-        .description {
-            display: none;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 10px;
-            position: absolute;
-            border-radius: 5px;
-        }
-
-        .cable:hover .description {
-            display: block;
-        }
-
-        #displayArea.solid {
-            background-color: #D8E2E8;
-        }
-
-        #displayArea.liquid {
-            background-color: #8AA1B1;
-        }
-
-        #displayArea.gas {
-            background-color: #617D8C;
-        }
-
-        #displayArea.plasma {
-            background-color: #414F60;
-        }
-
-        #displayArea.mixture {
-            background-color: #E9CBB3;
-        }
-
-        #displayArea.pure {
-            background-color: #D3A87E;
-        }
-
-    </style>
-</head>
-
 <body>
    <table cellspacing="20">
     <tr>
@@ -144,7 +34,11 @@
   <a href="text.html"> Chatbox</a>
   <div class="container">
     <hr>
-    <h1>Matter Classifier</h1>
+   <a href="Weekly-Work.html"> Weekly Work</a>
+<hr>
+   <a href="computerparts.html"> Build Your PC's Power and Cooling System</a>
+<hr>
+    <p>Matter Classifier</p>
     
     <!DOCTYPE html>
     <html lang="en">
@@ -201,66 +95,47 @@
         </div>
     </div>
     
-    <script>
-        // Your refactored JavaScript code here
-        // (Paste the refactored JavaScript code I provided in the previous answer here)
-        document.addEventListener('DOMContentLoaded', () => {
-    const matterTypeDropdown = document.getElementById('matterType');
-    const displayArea = document.getElementById('displayArea');
-    const question = document.getElementById('question');
-    const feedback = document.getElementById('feedback');
-    const quizButtons = document.querySelectorAll('.quizBtn');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase Diagram</title>
+    <style>
+        svg {
+            background-color: lightgray;
+        }
+    </style>
 
-    const matterProperties = {
-        solid: 'Solids have a definite shape and volume.',
-        liquid: 'Liquids have a definite volume but take the shape of their container.',
-        gas: 'Gases fill any container and do not have a definite shape or volume.',
-        plasma: 'Plasma is an ionized state of matter similar to gas.',
-        mixture: 'Mixtures contain more than one chemical substance, and their properties can vary.',
-        pure: 'Pure substances have consistent properties and are composed of only one type of element or compound.',
-    };
+    <svg id="phaseDiagram" width="400" height="400">
+        <!-- Solid-Gas Line -->
+        <line id="solidGasLine" x1="100" y1="100" x2="300" y2="100" stroke="black" />
+        <!-- Liquid-Gas Line -->
+        <line id="liquidGasLine" x1="300" y1="100" x2="300" y2="300" stroke="black" />
+        <!-- Liquid-Solid Line -->
+        <line id="liquidSolidLine" x1="100" y1="100" x2="300" y2="300" stroke="black" />
+        <!-- Text Labels -->
+        <text x="100" y="90" font-family="Verdana" font-size="12" fill="blue">Solid</text>
+        <text x="285" y="90" font-family="Verdana" font-size="12" fill="blue">Gas</text>
+        <text x="100" y="320" font-family="Verdana" font-size="12" fill="blue">Liquid</text>
+    </svg>
 
-    // Update display area based on dropdown selection
-    matterTypeDropdown.addEventListener('change', (event) => {
-        const matterType = event.target.value;
-        displayArea.textContent = matterProperties[matterType] || 'Select a matter type to view its properties.';
-        displayArea.className = matterType; // this sets the class for CSS styling
-    });
+    <label for="temperature">Temperature:</label>
+    <input type="range" id="temperature" name="temperature" min="0" max="200">
+    <br>
+    <label for="pressure">Pressure:</label>
+    <input type="range" id="pressure" name="pressure" min="0" max="200">
 
-    // Cable description interactive functionality
-    document.querySelectorAll('.cable').forEach(cable => {
-        cable.addEventListener('mouseenter', function() {
-            this.querySelector('.description').style.display = 'block';
-        });
-        cable.addEventListener('mouseleave', function() {
-            this.querySelector('.description').style.display = 'none';
-        });
-    });
+    
 
-    // Quiz logic
-    function generateQuestion() {
-        question.textContent = 'Which state of matter has fixed volume property?'; // Modify as needed
-    }
-    generateQuestion();
+    <script src="script.js"></script>
 
-    quizButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const chosenAnswer = this.getAttribute('data-answer');
-            // Assuming "solid", "liquid", "gas", and "plasma" are the correct answers for now. Adjust as needed.
-            if(['solid', 'liquid'].includes(chosenAnswer)) {
-                feedback.textContent = 'Correct!';
-                feedback.style.color = 'green';
-            } else {
-                feedback.textContent = 'Try again.';
-                feedback.style.color = 'red';
-            }
-        });
-    });
-});
-    </script>
+
+    
     </body>
     </html>
 
 </body>
 
 </html>
+
+
+
+
