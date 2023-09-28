@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     let leftScore = 0;
     let rightScore = 0;
-    
+
     const ball = document.querySelector('.ball');
     const leftPaddle = document.getElementById('leftPaddle');
     const rightPaddle = document.getElementById('rightPaddle');
-    const winMessage = document.getElementById('winMessage'); // Added winMessage element
+    const winMessage = document.getElementById('winMessage');
 
     leftPaddle.style.top = '150px';
     rightPaddle.style.top = '150px';
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ballX < 30 && ballY > leftPaddle.offsetTop && ballY < leftPaddle.offsetTop + 100 ||
             ballX > 750 && ballY > rightPaddle.offsetTop && ballY < rightPaddle.offsetTop + 100
         ) {
-            ballSpeedX = -ballSpeedX;
+            ballSpeedX = -ballSpeedX * 1.05;  // Increase speed by 5% on paddle hit
         }
 
         if (ballX < 0 || ballX > 800) {
@@ -77,12 +77,21 @@ document.addEventListener("DOMContentLoaded", function() {
         requestAnimationFrame(moveBall);
     }
 
-    document.addEventListener('mousemove', (e) => {
-        const newPaddleY = e.clientY - 50;
-
-        if(newPaddleY >= 0 && newPaddleY <= 300) {
-            leftPaddle.style.top = newPaddleY + 'px';
+    function movePaddle(event) {
+        const newPaddleY = ('clientY' in event) ? event.clientY : event.touches[0].clientY;
+        const adjustedPaddleY = newPaddleY - 50;
+        if (adjustedPaddleY >= 0 && adjustedPaddleY <= 300) {
+            leftPaddle.style.top = adjustedPaddleY + 'px';
         }
+    }
+
+    // Handle paddle movement for desktop
+    document.addEventListener('mousemove', movePaddle);
+
+    // Handle paddle movement for mobile
+    document.addEventListener('touchmove', function(e) {
+        e.preventDefault(); // Prevents page scrolling when moving paddle on mobile
+        movePaddle(e);
     });
 
     moveBall();
